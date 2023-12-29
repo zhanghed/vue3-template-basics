@@ -1,0 +1,10 @@
+{
+  "app": {
+    "listen": 3001,
+    "secretKey": "Admin123 .?><?."
+  },
+  "mongodb": {
+    "client": "mongodb://localhost:27017",
+    "db": "big-screen"
+  }
+}
