@@ -31,15 +31,17 @@ router.post("/api/login", async (req, res) => {
 router.get("/orders", async (req, res) => {
   try {
     const info = req.query;
-    const query = { ...JSON.parse(info.condition) };
+    const query = { ...JSON.parse(info.condition) }; //条件
+    const skip = parseInt(info.skip); //起始序号
+    const limit = parseInt(info.limit); //获取个数
     const count = await movies_orders.countDocuments(query);
     if (count === 0) return;
-    const cursor = movies_orders.find(query);
+    const cursor = movies_orders.find(query).skip(skip).limit(limit);
     const orders = [];
     for await (let i of cursor) {
       orders.push(i);
     }
-    res.ok(200, "获取成功", orders);
+    res.ok(200, "获取成功", { orders: orders, count: count });
   } catch (err) {
     console.log(err);
   }

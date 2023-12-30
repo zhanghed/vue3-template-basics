@@ -7,7 +7,7 @@ import Logo from './Logo/index.vue'
   <div class="layout">
     <el-row class="row">
       <!-- 左侧 -->
-      <el-col class="col-left" :span="2">
+      <el-col class="col-left" :span="3">
         <!-- logo -->
         <div class="logo">
           <Logo></Logo>
@@ -21,7 +21,7 @@ import Logo from './Logo/index.vue'
         </div>
       </el-col>
       <!-- 右侧 -->
-      <el-col class="col-right" :span="22">
+      <el-col class="col-right" :span="21">
         <!-- 导航 -->
         <div class="tab">
           <div class="tabbar"><Tabbar></Tabbar></div>

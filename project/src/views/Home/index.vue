@@ -10,6 +10,8 @@ onMounted(async () => {
 })
 </script>
 <template>
+  <!-- 图表 -->
+  TODO
   <div>
     {{ data }}
   </div>

@@ -31,10 +31,10 @@ const router = createRouter({
           meta: { title: '首页', icon: 'House' }
         },
         {
-          path: '/screen',
-          component: () => import('@/views/Screen/index.vue'),
-          name: 'screen',
-          meta: { title: '大屏', icon: 'Monitor' }
+          path: '/orders',
+          component: () => import('@/views/Orders/index.vue'),
+          name: 'orders',
+          meta: { title: '订单', icon: 'Tickets' }
         },
         {
           path: '/more',

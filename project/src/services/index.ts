@@ -70,21 +70,26 @@ export const apiUrl = async () => {
 }
 
 // 订单列表
-export const apiOrders = async (info: { condition: string }) => {
+export const apiOrders = async (info: {
+  condition: string
+  skip: number
+  limit: number
+}) => {
   return request<
     any,
     {
       code: string
       message: string
       data: {
-        orders: object
+        orders: object[]
+        count: number
       }
     }
   >({
     url: '/orders',
     method: 'get',
     params: {
-      condition: info.condition
+      ...info
     }
   })
 }

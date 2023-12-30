@@ -34,12 +34,12 @@ instance.interceptors.response.use(
     // 业务失败
     if (res.data?.code !== 200) {
       storeUser().delUser() //删用户信息
-      router.push({
-        path: '/login'
-      })
       ElMessage({
         type: 'error',
         message: '请重新登录'
+      })
+      router.push({
+        path: '/login'
       })
       return Promise.reject(res)
     }
@@ -49,12 +49,12 @@ instance.interceptors.response.use(
   (err) => {
     // 请求失败
     storeUser().delUser() //删用户信息
-    router.push({
-      path: '/login'
-    })
     ElMessage({
       type: 'error',
       message: '请重新登录'
+    })
+    router.push({
+      path: '/login'
     })
     return Promise.reject(err)
   }
