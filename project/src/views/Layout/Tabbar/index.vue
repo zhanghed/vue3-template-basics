@@ -1,14 +1,9 @@
 <!-- tabbar -->
 <script setup lang="ts">
-import {
-  ArrowRight,
-  Refresh,
-  Setting,
-  CloseBold
-} from '@element-plus/icons-vue'
+import { ArrowRight, Refresh, CloseBold } from '@element-plus/icons-vue'
 import { useRoute } from 'vue-router'
-import { storeUser } from '@/stores/user'
-import { apiLogout } from '@/services/user'
+import { storeUser } from '@/stores'
+import { apiLogout } from '@/services'
 import router from '@/router'
 import { ElMessage } from 'element-plus'
 

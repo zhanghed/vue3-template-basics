@@ -3,6 +3,7 @@ const jwt = require("jsonwebtoken");
 const router = express.Router();
 const { movies_users, movies_orders } = require("../db");
 const config = require("../config.json");
+const datetime = require("silly-datetime");
 
 // 登录
 router.post("/api/login", async (req, res) => {
@@ -42,6 +43,18 @@ router.get("/orders", async (req, res) => {
   } catch (err) {
     console.log(err);
   }
+});
+
+// 系统时间
+router.get("/date", async (req, res) => {
+  const time = datetime.format(new Date(), "YYYY-MM-DD HH:mm");
+  res.ok(200, "获取成功", time);
+});
+
+// 项目链接
+router.get("/url", async (req, res) => {
+  const url = "https://gitee.com/zhanghed/vue3-template-basics";
+  res.ok(200, "获取成功", url);
 });
 
 // 退出登录

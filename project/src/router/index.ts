@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import { storeUser } from '@/stores/user'
+import { storeUser } from '@/stores'
 import NProgress from 'nprogress' //加载条
 import 'nprogress/nprogress.css'
 

@@ -1,5 +1,5 @@
 import router from '@/router'
-import { storeUser } from '@/stores/user'
+import { storeUser } from '@/stores'
 import type { RouteRecordRaw } from 'vue-router'
 
 // 生成动态路由

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { apiLogin } from '@/services/user'
-import { storeUser } from '@/stores/user'
+import { apiLogin } from '@/services'
+import { storeUser } from '@/stores'
 import { useRouter } from 'vue-router'
 import { User, Lock } from '@element-plus/icons-vue'
 import { ElMessage } from 'element-plus'

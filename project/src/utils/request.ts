@@ -1,4 +1,4 @@
-import { storeUser } from '@/stores/user'
+import { storeUser } from '@/stores'
 import router from '@/router'
 import axios from 'axios'
 import { ElMessage } from 'element-plus'

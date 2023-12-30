@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { apiOrders } from '@/services/orders'
+import { apiOrders } from '@/services'
 import { ref, onMounted } from 'vue'
 
 let data = ref()
