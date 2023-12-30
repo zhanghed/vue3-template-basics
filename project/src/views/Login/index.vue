@@ -42,16 +42,25 @@ const onSubmit = async () => {
     <el-row justify="space-between">
       <el-col :span="8"></el-col>
       <el-col :span="8" class="col-center">
-        <el-form :model="form" :rules="rules" ref="loginFormRef">
+        <el-form class="form" :model="form" :rules="rules" ref="loginFormRef">
+          <el-alert title="用户名 : root" type="success" />
           <el-form-item label="" prop="username">
-            <el-input :prefix-icon="User" v-model.trim="form.username" />
+            <el-input
+              :prefix-icon="User"
+              v-model.trim="form.username"
+              placeholder="用户名"
+              clearable
+            />
           </el-form-item>
+          <el-alert title="密码 : admin123" type="success" />
           <el-form-item label="" prop="password">
             <el-input
               :prefix-icon="Lock"
               type="password"
               v-model.trim="form.password"
               show-password
+              placeholder="密码"
+              clearable
             />
           </el-form-item>
           <el-form-item>
@@ -75,6 +84,9 @@ const onSubmit = async () => {
     display: flex;
     justify-content: center;
     align-items: center;
+    .form {
+      width: 40%;
+    }
   }
   .but {
     width: 100%;
