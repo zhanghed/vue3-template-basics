@@ -12,34 +12,26 @@ const form = ref({
   id: null,
   status: null
 })
-// 获取订单列表
-const getOrders = async (
-  condition: object,
-  skip: number = 0,
-  limit: number = n
-) => {
-  const res = await apiOrders({
-    condition: JSON.stringify({ ...condition }), //筛选条件
-    skip: skip, //起始序号
-    limit: limit //获取个数
-  })
+
+// 条件查询
+const onSubmit = async () => {
+  const condition = {} as any
+  if (form.value.id) condition.id = form.value.id
+  if (form.value.status) condition.status = JSON.parse(form.value.status)
+
+  const res = await apiOrders(condition, 0, n)
   data.value = res.data.orders
   count.value = res.data.count
 }
 
-// 条件查询
-const onSubmit = () => {
-  const condition = {} as any
-  if (form.value.id) condition.id = form.value.id
-  if (form.value.status) condition.status = JSON.parse(form.value.status)
-  getOrders(condition)
-}
-
 // 监听页码变化
-watch(currentPage, (newv) => {
+watch(currentPage, async (newv) => {
   const skip = n * (newv - 1)
   const limit = n
-  getOrders({}, skip, limit)
+
+  const res = await apiOrders({}, skip, limit)
+  data.value = res.data.orders
+  count.value = res.data.count
 })
 
 // 弹框
@@ -77,12 +69,12 @@ const dialog = (row: any) => {
       style="width: 100%"
       @cell-click="dialog"
     >
-      <el-table-column prop="id" label="Id" />
-      <el-table-column prop="name" label="Name" />
-      <el-table-column prop="phone" label="Phone" />
-      <el-table-column prop="address" label="Address" />
-      <el-table-column prop="price" label="Price" />
-      <el-table-column prop="status" label="Status" />
+      <el-table-column prop="id" label="订单编号" />
+      <el-table-column prop="name" label="姓名" />
+      <el-table-column prop="phone" label="电话" />
+      <el-table-column prop="address" label="地址" />
+      <el-table-column prop="price" label="金额" />
+      <el-table-column prop="status" label="状态" />
     </el-table>
     <!-- 分页器 -->
     <el-pagination
@@ -92,7 +84,7 @@ const dialog = (row: any) => {
       layout="total, prev, pager, next"
       :total="count"
     />
-    <!-- 弹出框 -->
+    <!-- 弹框 -->
     <el-dialog v-model="dialogVisible" title="详情" width="30%">
       <el-card>
         <div v-for="(v, k) in dialogText" :key="v">{{ k }} : {{ v }}</div>

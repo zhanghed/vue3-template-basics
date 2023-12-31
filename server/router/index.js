@@ -53,12 +53,6 @@ router.get("/orders", async (req, res) => {
   }
 });
 
-// 系统时间
-router.get("/date", async (req, res) => {
-  const time = datetime.format(new Date(), "YYYY-MM-DD HH:mm");
-  res.ok(200, "获取成功", time);
-});
-
 // 项目链接
 router.get("/url", async (req, res) => {
   const url = "https://gitee.com/zhanghed/vue3-template-basics";

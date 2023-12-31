@@ -1,7 +1,7 @@
 <!-- logo -->
 <script setup lang="ts"></script>
 <template>
-  <img src="../../../../public/favicon.ico" alt="" />
+  <img src="../../../../favicon.ico" alt="" />
   <span>vue3-template-basics</span>
 </template>
 

@@ -14,7 +14,16 @@ onMounted(async () => {
 })
 </script>
 <template>
-  <a href="" @click="click">{{ data }}</a>
+  <el-card class="card">
+    <template #header>
+      <span>项目地址</span>
+    </template>
+    <a href="" @click="click">{{ data }}</a>
+  </el-card>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.card {
+  width: 20%;
+}
+</style>

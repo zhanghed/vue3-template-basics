@@ -39,21 +39,6 @@ export const apiLogout = async () => {
   })
 }
 
-// 系统时间
-export const apiDate = async () => {
-  return request<
-    any,
-    {
-      code: string
-      message: string
-      data: string
-    }
-  >({
-    url: '/date',
-    method: 'get'
-  })
-}
-
 // 跳转链接
 export const apiUrl = async () => {
   return request<
@@ -70,11 +55,11 @@ export const apiUrl = async () => {
 }
 
 // 订单列表
-export const apiOrders = async (info: {
-  condition: string
-  skip: number
-  limit: number
-}) => {
+export const apiOrders = async (
+  condition: object = {},
+  skip: number = 0,
+  limit: number = 100
+) => {
   return request<
     any,
     {
@@ -89,7 +74,9 @@ export const apiOrders = async (info: {
     url: '/orders',
     method: 'get',
     params: {
-      ...info
+      condition: JSON.stringify(condition),
+      skip,
+      limit
     }
   })
 }

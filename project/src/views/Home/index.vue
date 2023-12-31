@@ -1,19 +1,20 @@
 <script setup lang="ts">
-import { apiDate } from '@/services'
-import { ref, onMounted } from 'vue'
-
-let data = ref()
-onMounted(async () => {
-  // 获取系统时间
-  const res = await apiDate()
-  data.value = res.data
-})
+import Status from './echarts/Status.vue'
+import Orders from './echarts/Orders.vue'
 </script>
 <template>
-  <!-- 图表 -->
-  <!-- TODO  更改数据库 -->
-  <div>
-    {{ data }}
+  <div class="home">
+    <Orders></Orders>
+    <Status></Status>
   </div>
 </template>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.home {
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+</style>
