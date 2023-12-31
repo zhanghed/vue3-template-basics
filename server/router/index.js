@@ -18,7 +18,7 @@ router.post("/api/login", async (req, res) => {
       if (i.password != info.password) return res.err(403, "密码错误");
       // 验证通过
       i.token = jwt.sign({ username: info.username }, config.app.secretKey, {
-        expiresIn: "600s",
+        expiresIn: "60s",
       });
       res.ok(200, "登录成功", i);
     }

@@ -24,6 +24,6 @@ onMounted(async () => {
 
 <style lang="scss" scoped>
 .card {
-  width: 20%;
+  width: 30%;
 }
 </style>

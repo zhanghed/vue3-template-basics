@@ -43,7 +43,6 @@ const onSubmit = async () => {
       <el-col :span="8"></el-col>
       <el-col :span="8" class="col-center">
         <el-form class="form" :model="form" :rules="rules" ref="loginFormRef">
-          <el-alert title="用户名 : root" type="success" />
           <el-form-item label="" prop="username">
             <el-input
               :prefix-icon="User"
@@ -52,7 +51,6 @@ const onSubmit = async () => {
               clearable
             />
           </el-form-item>
-          <el-alert title="密码 : admin123" type="success" />
           <el-form-item label="" prop="password">
             <el-input
               :prefix-icon="Lock"
@@ -68,6 +66,7 @@ const onSubmit = async () => {
               >登 录</el-button
             >
           </el-form-item>
+          <el-alert title="用户名 : root 密码 : admin123" type="success" />
         </el-form>
       </el-col>
       <el-col :span="8"></el-col>

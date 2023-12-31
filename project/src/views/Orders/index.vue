@@ -17,7 +17,7 @@ const form = ref({
 const onSubmit = async () => {
   const condition = {} as any
   if (form.value.id) condition.id = form.value.id
-  if (form.value.status) condition.status = JSON.parse(form.value.status)
+  if (form.value.status) condition.status = form.value.status
 
   const res = await apiOrders(condition, 0, n)
   data.value = res.data.orders
@@ -54,8 +54,11 @@ const dialog = (row: any) => {
       </el-form-item>
       <el-form-item class="el-form-item" label="">
         <el-select v-model.trim="form.status" placeholder="订单状态" clearable>
-          <el-option label="已完成" value="true" />
-          <el-option label="未完成" value="false" />
+          <el-option label="已备货" value="已备货" />
+          <el-option label="已出库" value="已出库" />
+          <el-option label="配送中" value="配送中" />
+          <el-option label="已完成" value="已完成" />
+          <el-option label="售后中" value="售后中" />
         </el-select>
       </el-form-item>
       <el-form-item>
@@ -102,6 +105,6 @@ const dialog = (row: any) => {
 
 <style lang="scss" scoped>
 .el-form-item {
-  width: 25vh;
+  width: 20vh;
 }
 </style>

@@ -6,11 +6,12 @@ const { client, movies_orders } = require("../db");
 
 // 数据模板
 const template = {
-  "list|20": [
+  "list|168": [
     {
       id: "@id", // id
       name: "@cname", // 名字
-      status: "@boolean", // 状态
+      // status: "@boolean", // 状态
+      "status|1": ["已完成", "配送中", "已出库", "售后中", "已备货"], // 状态
       "price|3": "@integer(0,9)", // 价格
       title: "@ctitle(10,20)", // 标题
       address: "@county(try)", // 地址

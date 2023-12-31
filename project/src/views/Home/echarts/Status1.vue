@@ -1,12 +1,18 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { onMounted, ref, defineProps } from 'vue'
 import * as echarts from 'echarts'
-import { apiOrders } from '@/services'
+
+const props = defineProps({
+  data: {
+    type: Array,
+    default: null
+  }
+})
 
 const main = ref()
 let option = {
   title: {
-    text: '订单完成情况'
+    text: '订单情况'
   },
   tooltip: {
     trigger: 'item'
@@ -43,16 +49,10 @@ let option = {
     }
   ]
 }
-
-onMounted(async () => {
-  // 未完成
-  const res2 = await apiOrders({ status: false }, 0, 100)
-  const countTrue2 = res2.data.count
-  option.series[0].data.push({ value: countTrue2, name: '未完成' })
-  // 已完成
-  const res1 = await apiOrders({ status: true }, 0, 100)
-  const countTrue1 = res1.data.count
-  option.series[0].data.push({ value: countTrue1, name: '已完成' })
+// TODO
+onMounted(() => {
+  console.log(option)
+  option.series[0].data = props.data as never
   // 渲染图表
   echarts.init(main.value).setOption(option)
 })
