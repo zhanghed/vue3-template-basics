@@ -2,13 +2,11 @@
 
 ## 前端项目 project
 
-Vue3 + Vite4 + TypeScript5 + Pinia + ElementPlus + echarts
+"Vue3 + Vite4 + TypeScript5 + Pinia + ElementPlus + echarts"
 
 ## 后端项目 server
 
 node + express + mockjs + mongodb
-
-# 环境
 
 ## 安装 node
 
