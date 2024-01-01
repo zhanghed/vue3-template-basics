@@ -14,7 +14,7 @@ onMounted(async () => {
 })
 </script>
 <template>
-  <el-card class="card">
+  <el-card class="card" shadow="hover">
     <template #header>
       <span>项目地址</span>
     </template>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref, defineProps, watch } from 'vue'
+import { ref, onMounted, watch } from 'vue'
 import * as echarts from 'echarts'
 
 const props = defineProps({
@@ -11,7 +11,7 @@ const props = defineProps({
 
 const main = ref()
 let chart = ref()
-const option = {
+let option = {
   title: {
     text: '订单情况'
   },
@@ -22,41 +22,25 @@ const option = {
     top: '5%',
     left: 'center'
   },
+  xAxis: {
+    type: 'category',
+    data: ['已完成', '配送中', '已出库', '售后中', '已备货']
+  },
+  yAxis: {
+    type: 'value'
+  },
   series: [
     {
-      type: 'pie',
-      radius: ['40%', '70%'],
-      avoidLabelOverlap: false,
-      itemStyle: {
-        borderRadius: 10,
-        borderColor: '#fff',
-        borderWidth: 2
-      },
-      label: {
-        show: false,
-        position: 'center'
-      },
-      emphasis: {
-        label: {
-          show: true,
-          fontSize: 40,
-          fontWeight: 'bold'
-        }
-      },
-      labelLine: {
-        show: false
-      },
-      data: []
+      data: [],
+      type: 'bar'
     }
   ]
 }
 
-// 初始化
 onMounted(async () => {
   chart.value = echarts.init(main.value)
 })
 
-// 监听父级参数异步变化
 watch(props.data, (v) => {
   option.series[0].data = v as any
   chart.value.setOption(option)

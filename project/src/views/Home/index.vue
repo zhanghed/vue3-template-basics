@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import StatusOne from './echarts/StatusOne.vue'
-import StatusTwo from './echarts/StatusTwo.vue'
+import StatusOne from './echarts/StatusOne/index.vue'
+import StatusTwo from './echarts/StatusTwo/index.vue'
 import { apiOrders } from '@/services'
 import { ref, onMounted } from 'vue'
 
@@ -18,6 +18,8 @@ onMounted(async () => {
 </script>
 <template>
   <div class="home">
+    <StatusOne :data="data"></StatusOne>
+    <StatusTwo :data="data"></StatusTwo>
     <StatusOne :data="data"></StatusOne>
     <StatusTwo :data="data"></StatusTwo>
   </div>
