@@ -6,26 +6,14 @@
 
 后端项目 node+express+mockjs+mongodb
 
-## 数据库
+安装 mongodb 数据库
 
-服务器安装 mongodb 数据库 默认地址为"mongodb://localhost:27017"
+存入模拟数据 server 根目录下运行`pnpm run mock`
 
-创建数据库"vue3-templote-basics"
+前端项目打包 project 根目录下运行`pnpm run build`
 
-创建用户集合"users"与订单集合"orders"
+复制文件 project/dist/ --> server/static/
 
-server 根目录下运行`pnpm run mock` 存入模拟数据
+启动服务 server 根目录下运行`pnpm run server`
 
-## 前端
-
-project 根目录下运行`pnpm run build` 打包项目
-
-将打包后的"project/dist"文件复制到"server/static"中
-
-## 后端
-
-server 根目录下运行`pnpm run server`启动服务端 默认监听地址"http://127.0.0.1:3001"
-
-## 浏览器
-
-浏览器访问"http://127.0.0.1:3001"
+浏览器访问 "http://127.0.0.1:3001"
