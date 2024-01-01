@@ -1,10 +1,10 @@
 # 说明
 
-## project 前端项目
+## project 为前端项目
 
 基于"Vue3 + Vite4 + TypeScript5 + Pinia + ElementPlus + echarts"
 
-## server 后端项目
+## server 为后端项目
 
 基于"node + express + mockjs + mongodb"
 
