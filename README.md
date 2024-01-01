@@ -1,16 +1,22 @@
 # 说明
 
-## project 为前端项目
+## 前端项目
 
 基于"Vue3 + Vite4 + TypeScript5 + Pinia + ElementPlus + echarts"
 
-## server 为后端项目
+## 后端项目
 
 基于"node + express + mockjs + mongodb"
 
+# 环境
+
 ## 安装 node
 
-......
+略...
+
+## 安装 mongodb
+
+略...
 
 ## 安装 pnpm
 
@@ -20,26 +26,22 @@
 
 `pnpm i`
 
-## 安装 mongodb
-
-......
-
 ## 导入数据
 
-`pnpm run mock`
+server 根目录下运行 `pnpm run mock`
 
-## 打包
+# 打包
 
-`pnpm run build`
+project 根目录下运行 `pnpm run build`
 
-## 部署
+# 部署
 
-"project/dist/ --> server/static/"
+"project/dist/"下的文件复制到 "server/static/"下
 
-## 启动
+# 启动
 
-`pnpm run server`
+server 根目录下运行 `pnpm run server`
 
-## 访问
+# 访问
 
-"http://127.0.0.1:3001"
+浏览器访问"http://127.0.0.1:3001"
