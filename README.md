@@ -1,12 +1,16 @@
 # 说明
 
-前后端项目 基础模板
+## 前端项目
 
-前端项目 Vue3+Vite4+TypeScript5+Pinia+ElementPlus+echarts
+Vue3 + Vite4 + TypeScript5 + Pinia + ElementPlus + echarts
 
-后端项目 node+express+mockjs+mongodb
+## 后端项目
+
+node + express + mockjs + mongodb
 
 # 环境
+
+## 安装 node
 
 ## 安装 pnpm
 
