@@ -8,40 +8,34 @@
 
 基于"node + express + mockjs + mongodb"
 
-# 环境
+## 部署
 
-## 安装 node
+安装 nodejs + mongodb
 
-略...
+安装 pnpm
 
-## 安装 mongodb
+> `npm i pnpm -g`
 
-略...
+安装依赖
 
-## 安装 pnpm
+> server 与 project 根目录下分别运行`pnpm i`
 
-`npm i pnpm -g`
+导入数据
 
-## 安装依赖
+> server 根目录下运行 `pnpm run mock`
 
-`pnpm i`
+打包
 
-## 导入数据
+> project 根目录下运行 `pnpm run build`
 
-server 根目录下运行 `pnpm run mock`
+部署
 
-# 打包
+> "project/dist/"下的文件复制到 "server/static/"下
 
-project 根目录下运行 `pnpm run build`
+启动
 
-# 部署
+> server 根目录下运行 `pnpm run server`
 
-"project/dist/"下的文件复制到 "server/static/"下
+访问
 
-# 启动
-
-server 根目录下运行 `pnpm run server`
-
-# 访问
-
-浏览器访问"http://127.0.0.1:3001"
+> 浏览器访问"http://127.0.0.1:3001"
