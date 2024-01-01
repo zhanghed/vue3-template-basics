@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Status1 from './echarts/Status1.vue'
-import Status2 from './echarts/Status2.vue'
+import StatusOne from './echarts/StatusOne.vue'
+import StatusTwo from './echarts/StatusTwo.vue'
 import { apiOrders } from '@/services'
 import { ref, onMounted } from 'vue'
 
@@ -8,16 +8,18 @@ let data: any = ref([])
 
 onMounted(async () => {
   const list = ['已完成', '配送中', '已出库', '售后中', '已备货']
+  let temp = []
   for (let i = 0; i < list.length; i++) {
     const res = await apiOrders({ status: list[i] }, 0, 100)
-    data.value.push({ name: list[i], value: res.data.count })
+    temp.push({ name: list[i], value: res.data.count })
   }
+  data.value.push(...temp) //解决父子组件异步重复监听的问题
 })
 </script>
 <template>
   <div class="home">
-    <Status1 :data="data"></Status1>
-    <!-- <Status2 :data="data"></Status2> -->
+    <StatusOne :data="data"></StatusOne>
+    <StatusTwo :data="data"></StatusTwo>
   </div>
 </template>
 <style lang="scss" scoped>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref, defineProps } from 'vue'
+import { onMounted, ref, defineProps, watch } from 'vue'
 import * as echarts from 'echarts'
 
 const props = defineProps({
@@ -10,7 +10,8 @@ const props = defineProps({
 })
 
 const main = ref()
-let option = {
+let chart = ref()
+const option = {
   title: {
     text: '订单情况'
   },
@@ -49,12 +50,16 @@ let option = {
     }
   ]
 }
-// TODO
-onMounted(() => {
-  console.log(option)
-  option.series[0].data = props.data as never
-  // 渲染图表
-  echarts.init(main.value).setOption(option)
+
+// 初始化
+onMounted(async () => {
+  chart.value = echarts.init(main.value)
+})
+
+// 监听父级参数异步变化
+watch(props.data, (v) => {
+  option.series[0].data = v as any
+  chart.value.setOption(option)
 })
 </script>
 <template>
