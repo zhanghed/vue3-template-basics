@@ -3,9 +3,13 @@ const cors = require("cors");
 const expressJWT = require("express-jwt");
 const router = require("./router");
 const config = require("./config.json");
+const history = require("connect-history-api-fallback"); //解决 访问资源 404 问题
 
 //实例
 const app = express();
+
+// 使用中间件connect-history-api-fallback
+app.use(history());
 
 //静态资源
 app.use(express.static(__dirname + "/static"));
