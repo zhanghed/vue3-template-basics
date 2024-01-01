@@ -6,13 +6,29 @@
 
 后端项目 node+express+mockjs+mongodb
 
-安装 mongodb 数据库
+# 环境
 
-存入模拟数据 server 根目录下运行`pnpm run mock`
+## 安装 pnpm
+
+`npm i pnpm -g`
+
+## 安装依赖
+
+`pnpm i`
+
+## 安装 mongodb
+
+## 数据
+
+`pnpm run mock`
+
+# 部署
 
 前端项目打包 project 根目录下运行`pnpm run build`
 
 复制文件 project/dist/ --> server/static/
+
+# 启动
 
 启动服务 server 根目录下运行`pnpm run server`
 
