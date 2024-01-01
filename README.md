@@ -12,30 +12,36 @@ node + express + mockjs + mongodb
 
 ## 安装 node
 
-...
+......
 
 ## 安装 pnpm
 
 `npm i pnpm -g`
 
-## 安装依赖 project、server
+## 安装依赖
 
 `pnpm i`
 
 ## 安装 mongodb
 
-## 数据
+......
+
+## 导入数据
 
 `pnpm run mock`
 
-# 部署
+## 打包
 
-前端项目打包 project 根目录下运行`pnpm run build`
+`pnpm run build`
 
-复制文件 project/dist/ --> server/static/
+## 部署
 
-# 启动
+"project/dist/ --> server/static/"
 
-启动服务 server 根目录下运行`pnpm run server`
+## 启动
 
-浏览器访问 "http://127.0.0.1:3001"
+`pnpm run server`
+
+## 访问
+
+"http://127.0.0.1:3001"
