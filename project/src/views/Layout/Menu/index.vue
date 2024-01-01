@@ -1,4 +1,3 @@
-<!-- 菜单组件 动态生成 -->
 <script setup lang="ts">
 import router from '@/router'
 import { storeUser } from '@/stores'

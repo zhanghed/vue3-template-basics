@@ -4,12 +4,10 @@ import { ref, onMounted } from 'vue'
 
 const data = ref()
 const click = () => {
-  // 跳转
-  window.open(data.value)
+  window.open(data.value) // 跳转
 }
 onMounted(async () => {
-  // 获取链接
-  const res = await apiUrl()
+  const res = await apiUrl() // 获取链接
   data.value = res.data
 })
 </script>

@@ -1,4 +1,4 @@
-// 连接mongodb数据库
+// mongodb数据库
 
 const config = require("../config.json");
 const { MongoClient } = require("mongodb");

@@ -1,4 +1,3 @@
-<!-- tabbar -->
 <script setup lang="ts">
 import { ArrowRight, Refresh, CloseBold } from '@element-plus/icons-vue'
 import { useRoute } from 'vue-router'

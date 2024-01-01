@@ -9,7 +9,7 @@ import { init } from '@/utils/init'
 
 const useStoreUser = storeUser()
 const router = useRouter()
-const form = ref({ username: 'root', password: 'admin123' })
+const form = ref({ username: '', password: '' })
 const rules = ref({
   username: [{ required: true, trigger: 'blur', message: '账号不能为空' }],
   password: [{ required: true, trigger: 'blur', message: '密码不能为空' }]

@@ -4,8 +4,7 @@ import NProgress from 'nprogress' //加载条
 import 'nprogress/nprogress.css'
 
 NProgress.configure({
-  //  取消加载图标
-  showSpinner: false
+  showSpinner: false //  取消加载图标
 })
 
 const router = createRouter({
@@ -23,6 +22,7 @@ const router = createRouter({
       name: 'layout',
       meta: { title: 'layout' },
       redirect: '/home',
+      // 二级路由
       children: [
         {
           path: '/home',
@@ -41,6 +41,7 @@ const router = createRouter({
           component: () => import('@/views/More/index.vue'),
           name: 'more',
           meta: { title: '更多', icon: 'More' },
+          // 三级路由
           children: [
             {
               path: '/about',
@@ -64,14 +65,7 @@ const router = createRouter({
       name: 'any',
       meta: { title: 'any' }
     }
-  ],
-  // 跳转后滚动位置
-  scrollBehavior() {
-    return {
-      left: 0,
-      top: 0
-    }
-  }
+  ]
 })
 
 // 白名单
@@ -79,7 +73,7 @@ const wihteList = ['/login', '/404']
 
 // 路由前置守卫
 router.beforeEach((to) => {
-  NProgress.start()
+  NProgress.start() //启动加载动画
   const useStoreUser = storeUser()
   // 判断token
   if (useStoreUser.user?.token) {
@@ -96,7 +90,7 @@ router.beforeEach((to) => {
 
 // 路由后置守卫
 router.afterEach(() => {
-  NProgress.done()
+  NProgress.done() //关闭加载动画
 })
 
 export default router

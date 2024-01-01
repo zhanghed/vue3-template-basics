@@ -39,7 +39,7 @@ export const apiLogout = async () => {
   })
 }
 
-// 跳转链接
+// 链接
 export const apiUrl = async () => {
   return request<
     any,

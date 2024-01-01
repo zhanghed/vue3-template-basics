@@ -57,5 +57,5 @@ app.use((err, req, res, next) => {
 
 // 监听端口
 app.listen(config.app.listen, () => {
-  console.log("...server...");
+  console.log(String(config.app.http + ":" + config.app.listen));
 });

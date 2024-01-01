@@ -1,7 +1,6 @@
 import router from '@/router'
 import { storeUser } from '@/stores'
 import type { RouteRecordRaw } from 'vue-router'
-// import '@/utils/temp' //临时生成路由权限
 
 // 生成动态路由
 const setRouter = (routerList: any[], userRouter: any[]) => {
