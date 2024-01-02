@@ -4,6 +4,8 @@
 
 后端项目基于 node + express + mockjs + mongodb
 
+![avatar](http://baidu.com/pic/doge.png)
+
 ## 环境准备
 
 安装 nodejs + mongodb
