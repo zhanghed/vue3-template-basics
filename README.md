@@ -4,7 +4,7 @@
 
 后端项目基于 node + express + mockjs + mongodb
 
-![avatar](https://gitee.com/zhanghed/vue3-template-basics/raw/main/PixPin_2024-01-02_10-51-02.png)
+![avatar](https://gitee.com/zhanghed/vue3-template-basics/raw/main/%E9%95%BF%E5%9B%BE_1704164372917.jpg)
 
 ## 环境准备
 
