@@ -30,7 +30,11 @@ import Logo from './Logo/index.vue'
         <div class="content">
           <el-scrollbar class="el-scrollbar">
             <!-- 二级路由出口 -->
-            <RouterView />
+            <router-view v-slot="{ Component }">
+              <keep-alive>
+                <component :is="Component" />
+              </keep-alive>
+            </router-view>
           </el-scrollbar>
         </div>
       </el-col>

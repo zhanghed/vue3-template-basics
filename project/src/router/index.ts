@@ -28,13 +28,13 @@ const router = createRouter({
           path: '/home',
           component: () => import('@/views/Home/index.vue'),
           name: 'home',
-          meta: { title: '首页', icon: 'House' }
+          meta: { title: '首页', icon: 'House', keepAlive: true }
         },
         {
           path: '/orders',
           component: () => import('@/views/Orders/index.vue'),
           name: 'orders',
-          meta: { title: '订单', icon: 'Tickets' }
+          meta: { title: '订单', icon: 'Tickets', keepAlive: true }
         },
         {
           path: '/more',
