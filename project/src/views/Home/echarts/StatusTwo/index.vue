@@ -37,7 +37,7 @@ let option = {
   ]
 }
 
-onMounted(async () => {
+onMounted(() => {
   chart.value = echarts.init(main.value)
 })
 

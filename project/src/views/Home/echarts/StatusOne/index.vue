@@ -52,7 +52,7 @@ const option = {
 }
 
 // 初始化
-onMounted(async () => {
+onMounted(() => {
   chart.value = echarts.init(main.value)
 })
 
